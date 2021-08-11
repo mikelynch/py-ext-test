@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Binaries when copied into directory structure
+src/py_ext_test/bin/
