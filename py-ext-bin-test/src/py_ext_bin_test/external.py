@@ -5,7 +5,7 @@ import subprocess
 def multiply_ext(lhs: int, rhs: int) -> int:
     res = subprocess.run(
         [
-            pkg_resources.resource_filename("py_ext_test", "bin/c_test"),
+            pkg_resources.resource_filename("py_ext_bin_test", "bin/c_test"),
             str(lhs),
             str(rhs),
         ],

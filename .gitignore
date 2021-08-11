@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # Binaries when copied into directory structure
-src/py_ext_test/bin/
+py-ext-bin-test/src/py_ext_bin_test/bin

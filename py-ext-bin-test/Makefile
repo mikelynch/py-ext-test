@@ -2,10 +2,10 @@
 PYTHON_ENV := ./.py
 
 # Directory containing binaries (could be outside repo)
-EXT_BIN := ./bin
+EXT_BIN := ../bin
 
 # Directory to copy binaries into at build time
-BIN_DIR := src/py_ext_test/bin
+BIN_DIR := src/py_ext_bin_test/bin
 
 .PHONY: bin_dir
 bin_dir:
