@@ -13,5 +13,6 @@ data_dir:
 	rm -f $(DATA_DIR)/*
 
 wheel: data_dir
+	rm -r build/ || true
 	cp -R $(EXT_DATA)/* $(DATA_DIR)/
 	$(PYTHON_ENV)/bin/python -m build

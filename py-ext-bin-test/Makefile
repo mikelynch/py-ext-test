@@ -13,10 +13,12 @@ bin_dir:
 	rm -f $(BIN_DIR)/*
 
 manylinux1_x86_64: bin_dir
+	rm -r build/ || true
 	cp $(EXT_BIN)/manylinux1_x86_64/* $(BIN_DIR)/
 	PLATFORM=manylinux1_x86_64 $(PYTHON_ENV)/bin/python -m build
 
 macosx_10_9_x86_64: bin_dir
+	rm -r build/ || true
 	cp $(EXT_BIN)/macosx_10_9_x86_64/* $(BIN_DIR)/
 	PLATFORM=macosx_10_9_x86_64 $(PYTHON_ENV)/bin/python -m build
 
