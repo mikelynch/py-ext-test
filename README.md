@@ -10,8 +10,10 @@ These two use cases can of course be combined.
 
 ## Bundling binaries (`py-ext-bin-test`)
 
-This shows how to bundle binaries,
+This shows how to bundle existing binaries,
 which can then be used from the package.
+This is as opposed to having dedicated native code
+which should be compiled and integrated with the package.
 
 There are two broad ways this could be achieved:
 1. Bundle binaries for all supported platforms
