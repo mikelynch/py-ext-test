@@ -1,6 +1,3 @@
-# Python environment to build in (requires setuptools, wheel and build)
-PYTHON_ENV := ./.py
-
 # Directory containing data (could be outside repo)
 EXT_DATA := ../ext_data
 
@@ -15,4 +12,4 @@ data_dir:
 wheel: data_dir
 	rm -r build/ || true
 	cp -R $(EXT_DATA)/* $(DATA_DIR)/
-	$(PYTHON_ENV)/bin/python -m build
+	python -m build
