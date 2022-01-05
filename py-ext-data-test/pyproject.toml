@@ -1,6 +1,21 @@
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+[tool.poetry]
+name = "py_ext_data_test"
+version = "0.1.0"
+description = ""
+authors = ["Mike Lynch <me@msl.sh>"]
+include = ["src/py_ext_data_test/data/*"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+black = "^21.12b0"
+flake8 = "^4.0"
+isort = "^5.10"
+mypy = "^0.910"
+pytest = "^6.2"
+tox = "^3.24"
+types-setuptools = "^57.4"
 
 [tool.black]
 line-length = 90
@@ -8,3 +23,23 @@ line-length = 90
 [tool.isort]
 profile = "black"
 multi_line_output = 3
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = true
+envlist = py37,py38,py39
+[testenv]
+whitelist_externals = poetry
+commands =
+    poetry install -v
+    poetry run black .
+    poetry run isort .
+    poetry run flake8 .
+    poetry run mypy src
+    poetry run pytest tests/
+"""
