@@ -22,4 +22,9 @@ macosx_10_9_x86_64: bin_dir
 	cp $(EXT_BIN)/macosx_10_9_x86_64/* $(BIN_DIR)/
 	PLATFORM=macosx_10_9_x86_64 $(PYTHON_ENV)/bin/python -m build
 
-all: manylinux1_x86_64 macosx_10_9_x86_64
+win_amd64: bin_dir
+	rm -r build/ || true
+	cp $(EXT_BIN)/win_amd64/* $(BIN_DIR)/
+	PLATFORM=win_amd64 $(PYTHON_ENV)/bin/python -m build
+
+all: manylinux1_x86_64 macosx_10_9_x86_64 win_amd64
