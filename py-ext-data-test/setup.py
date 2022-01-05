@@ -7,6 +7,12 @@ setup(
     packages=find_packages("src"),
     package_dir={"": "src"},
     python_requires=">3.5",
+    install_requires=[],
+    extras_require={
+        'dev': [
+            'pytest',
+        ]
+    },
     package_data={
         "py_ext_data_test": ["data/*"],
     },
