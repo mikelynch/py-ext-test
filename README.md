@@ -37,6 +37,11 @@ While it is likely possible to come up with
 a pure Python/setuptools approach to this,
 this package currently uses a Makefile.
 
+At build time,
+this copies the contents of `bin/<platform>`
+so that the wheel contains only the desired binaries
+at `py_ext_bin_test/bin`.
+
 ## Bundling data (`py-ext-data-test`)
 
 This shows how to bundle data files
@@ -53,3 +58,6 @@ or even outside the repo.
 Here, this is represented by the contents of `ext-data`.
 
 Once again, this uses a Makefile to perform the necessary steps.
+At build time,
+this copies the contents of `ext_data`
+into `py_ext_data_test/data`.
