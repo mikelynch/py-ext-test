@@ -1,5 +1,4 @@
 # Python environment to build in (requires setuptools, wheel and build)
-PYTHON_ENV := ./.py
 
 # Directory containing binaries (could be outside repo)
 EXT_BIN := ../bin
@@ -15,11 +14,11 @@ bin_dir:
 manylinux1_x86_64: bin_dir
 	rm -r build/ || true
 	cp $(EXT_BIN)/manylinux1_x86_64/* $(BIN_DIR)/
-	PLATFORM=manylinux1_x86_64 $(PYTHON_ENV)/bin/python -m build
+	PLATFORM=manylinux1_x86_64 python -m build
 
 macosx_10_9_x86_64: bin_dir
 	rm -r build/ || true
 	cp $(EXT_BIN)/macosx_10_9_x86_64/* $(BIN_DIR)/
-	PLATFORM=macosx_10_9_x86_64 $(PYTHON_ENV)/bin/python -m build
+	PLATFORM=macosx_10_9_x86_64 python -m build
 
 all: manylinux1_x86_64 macosx_10_9_x86_64
