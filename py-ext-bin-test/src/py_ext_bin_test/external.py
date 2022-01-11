@@ -11,6 +11,8 @@ def get_bin_path(package_name: str, name: str) -> str:
 
     return pkg_resources.resource_filename(package_name, f"bin/{bin_name}")
 
+import pkg_resources
+
 
 def multiply_ext(lhs: int, rhs: int) -> int:
     res = subprocess.run(

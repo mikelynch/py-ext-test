@@ -1,8 +1,8 @@
 import os
 from distutils.dist import Distribution
+
 from setuptools import find_packages, setup
 from wheel.bdist_wheel import bdist_wheel
-
 
 # Get platform
 default_platform = bdist_wheel(Distribution()).get_tag()[2]
@@ -25,6 +25,19 @@ setup(
     packages=find_packages("src"),
     package_dir={"": "src"},
     python_requires=">3.5",
+    install_requires=[],
+    extras_require={
+        "dev": [
+            "black",
+            "flake8",
+            "isort",
+            "mypy",
+            "pre-commit",
+            "pytest",
+            "tox",
+            "types-setuptools",
+        ]
+    },
     package_data={
         "py_ext_bin_test": ["bin/*"],
     },
