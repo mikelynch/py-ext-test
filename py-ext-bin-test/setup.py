@@ -29,6 +29,7 @@ setup(
     extras_require={
         "dev": [
             "black",
+            "build",
             "flake8",
             "isort",
             "mypy",
