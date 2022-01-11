@@ -1,11 +1,21 @@
-import pkg_resources
 import subprocess
+import sys
+
+import pkg_resources
+
+
+def get_bin_path(package_name: str, name: str) -> str:
+    bin_name = name
+    if sys.platform == "win32":
+        bin_name = bin_name + ".exe"
+
+    return pkg_resources.resource_filename(package_name, f"bin/{bin_name}")
 
 
 def multiply_ext(lhs: int, rhs: int) -> int:
     res = subprocess.run(
         [
-            pkg_resources.resource_filename("py_ext_bin_test", "bin/c_test"),
+            get_bin_path("py_ext_bin_test", "c_test"),
             str(lhs),
             str(rhs),
         ],
