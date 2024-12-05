@@ -12,4 +12,4 @@ data_dir:
 wheel: data_dir
 	rm -r build/ || true
 	cp -R $(EXT_DATA)/* $(DATA_DIR)/
-	python -m build
+	poetry build
